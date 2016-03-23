@@ -2,16 +2,15 @@
 
 main() {
   int c = 0;
-  int blanks = 0;
 
   while ((c = getchar()) != EOF) {
-    if (c == ' ') {
-      blanks++;
+    if (c == '\t') {
+      printf("\\t");
+    } else if (c == '\b') {
+      printf("\\b");
+    } else if (c == '\\') {
+      printf("\\\\");
     } else {
-      blanks = 0;
-    }
-
-    if (blanks <= 1) {
       putchar(c);
     }
   }
