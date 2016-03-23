@@ -1,11 +1,11 @@
 #include <stdio.h>
 
 main() {
-  int c;
+  long count = 0;
 
-  printf("This is EOF: %d\n", EOF);
-
-  while ((c = getchar()) != EOF) {
-    putchar(c);
+  while (getchar() != EOF) {
+    count++;
   }
+
+  printf("%ld\n", count);
 }
