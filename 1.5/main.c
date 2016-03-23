@@ -1,9 +1,11 @@
 #include <stdio.h>
 
 main() {
-  printf("Do you like puppies? [Y/n]: ");
-  char answer = getchar();
-  printf("Good, ");
-  putchar(answer);
-  printf("\n");
+  int c;
+
+  printf("This is EOF: %d\n", EOF);
+
+  while ((c = getchar()) != EOF) {
+    putchar(c);
+  }
 }
