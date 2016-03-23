@@ -1,11 +1,22 @@
 #include <stdio.h>
 
 main() {
-  long count = 0;
+  int c = 0;
+  int newlines = 0;
+  int tabs = 0;
+  int blanks = 0;
 
-  while (getchar() != EOF) {
-    count++;
+  while ((c = getchar()) != EOF) {
+    if (c == '\n') {
+      newlines++;
+    } else if (c == '\t') {
+      tabs++;
+    } else if (c == ' ') {
+      blanks++;
+    }
   }
 
-  printf("%ld\n", count);
+  printf("Newline count: %d\n", newlines);
+  printf("Tab count: %d\n", tabs);
+  printf("Whitespace count: %d\n", blanks);
 }
