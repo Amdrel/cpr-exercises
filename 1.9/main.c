@@ -69,11 +69,6 @@ void copy(char to[], char from[]) {
 void reverse(char in[], int size) {
   int holder;
 
-  char line = 0;
-  if (in[size - 1] == '\n') {
-    line = 1;
-  }
-
   for (int i = 0; i < size / 2; i++) {
     int rev = (size - 1) - i;
     holder = in[i];
