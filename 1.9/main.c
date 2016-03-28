@@ -4,6 +4,7 @@
 
 int getbetterline(char line[], int maxline);
 void copy(char to[], char from[]);
+void reverse(char in[], int size);
 
 int main() {
   int len;
@@ -19,8 +20,10 @@ int main() {
     }
   }
 
+  reverse(longest, max);
+
   if (max > 0) {
-    printf("%s", longest);
+    printf("%s\n", longest);
   }
 
   return 0;
@@ -60,5 +63,21 @@ void copy(char to[], char from[]) {
   // terminator is reached.
   while ((to[i] = from[i]) != '\0') {
     i++;
+  }
+}
+
+void reverse(char in[], int size) {
+  int holder;
+
+  char line = 0;
+  if (in[size - 1] == '\n') {
+    line = 1;
+  }
+
+  for (int i = 0; i < size / 2; i++) {
+    int rev = (size - 1) - i;
+    holder = in[i];
+    in[i] = in[rev];
+    in[rev] = holder;
   }
 }
